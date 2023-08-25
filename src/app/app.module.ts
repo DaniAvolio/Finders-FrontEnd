@@ -10,15 +10,20 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ServiceFormComponent } from './components/service-form/service-form.component';
+import { FormsModule} from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    ProfileComponent
+    ProfileComponent,
+    ServiceFormComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     MatCardModule,
     MatButtonModule,
     MatSidenavModule,
+    MatInputModule,
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

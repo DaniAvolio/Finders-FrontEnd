@@ -1,0 +1,25 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <h3>Service Form</h3>
+
+    <input type="hidden" id="id" name="id" [(ngModel)]="model.id">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="name" required name="name" [(ngModel)]="model.name">
+    </div>
+    <div class="mb-3">
+      <label for="category" class="form-label">Categoria</label>
+      <input type="text" class="form-control" id="category" required name="category" [(ngModel)]="model.category">
+    </div>
+    <div class="mb-3">
+      <label for="position" class="form-label">posizione</label>
+      <input type="text" class="form-control" id="position" required name="position" [(ngModel)]="model.position">
+    </div>
+    <div class="mb-3">
+      <label for="cost" class="form-label">Prezzo</label>
+      <input type="text" class="form-control" id="cost" required name="cost" [(ngModel)]="model.cost">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Salva</button>
+  </form>
+</div>
