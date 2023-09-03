@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/services/service.service';
 
 
 @Component({
@@ -9,17 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomepageComponent implements OnInit {
 
 
-  constructor() {}
+  constructor(private serviceService: ServiceService) {}
 
-  ngOnInit(): void {
-  }
   // member section
 
-  services = [
-    {id: 1, name:"Bagni parco lambro", category:"Bagni", position:"via lambrate 23, Milano", cost:"free" },
-    {id: 2, name:"Docce naviglio grande", category:"Docce", position:"via del naviglio grande 12, Milano", cost:"2" },
-    {id: 3, name:"Bagni naviglio grande nord", category:"bagni", position:"via del naviglio grande 100, Milano", cost:"1" },
-  ];
+  services: any
 
   selectedService?: any;
 
@@ -27,12 +22,25 @@ export class HomepageComponent implements OnInit {
 
   // method section
 
+
+  ngOnInit(): void {
+    this.serviceService.getListOfServices().
+    subscribe({
+      next: s => this.services = s.data,
+      error: e => console.log(e)
+    });
+  }
+
    onSelectService(service: any) :void {
     this.selectedService = service;
   }
 
-  onDelete(service: any){
-    this.services = this.services.filter(serv => serv.id != service.id)
+  onDelete(service: any): void{
+    this.serviceService.deleteService(service.id).
+    subscribe({
+      next: s => this.ngOnInit(),
+      error: e => console.log(e)
+    });
   }
 
 
