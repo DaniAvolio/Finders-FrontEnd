@@ -16,8 +16,8 @@ export class ServiceService {
     return this.http.get<APIResponse>('/api/v1/services');
    }
 
-   getService(id: any){
-    return this.http.get(`/api/v1/services/${id}`)
+   getService(id: any): Observable<APIResponse>{
+    return this.http.get<APIResponse>(`/api/v1/services/${id}`);
    }
 
    createService(service: any){

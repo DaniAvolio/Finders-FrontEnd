@@ -27,7 +27,7 @@ ngOnInit(): void {
   {
     this.serviceService.getService(this.route.snapshot.paramMap.get('id')).
     subscribe({
-      next: s => this.model = s,
+      next: s => this.model = s.data,
       error: e => console.log(e)
     });
   }
