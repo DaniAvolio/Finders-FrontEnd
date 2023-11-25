@@ -18,14 +18,16 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ServiceFormComponent } from './components/service-form/service-form.component';
 import { FormsModule} from '@angular/forms'
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule} from '@angular/common/http';
+import { NavHeaderComponent } from './components/shared/nav-header/nav-header.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     ProfileComponent,
-    ServiceFormComponent
+    ServiceFormComponent,
+    NavHeaderComponent
   ],
   imports: [
     BrowserModule,
